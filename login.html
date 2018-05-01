@@ -1,16 +1,18 @@
 <!DOCTYPE HTML>
 	<meta charset = "UTF-8" />
 	<head>
-		<title> Login </title>
+		<title> Login To Scheduler </title>
 	</head>
 	<body>
 		<h1> Welcome to the Scheduler Application </h1>
 		<form action="" method="POST">
-		Please enter your username: <input type="text" name="username" id="username"> </input> <br />
-		Please enter your password: <input type="text" name="password" id="password"> </input> <br />
-
-		<input type="submit" value="Login"> </input>
+			Please enter your email: <input type="text" name="email" id="email"> </input> <br />
+			Please enter your password: <input type="password" name="password" id="password"> </input> <br />
+			<input type="submit" value="Login"> </input>
 		</form>
-		<a href=""> Don't have a login? Register here </a>
+		<a href="register.html"> Don't have a login? Register here </a> <br />
+		{% if error: %}
+			<b> Invalid Email / Password Provided</b>
+		{% endif %}
 	</body>
 </HTML>

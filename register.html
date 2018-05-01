@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+	<meta charset = "UTF-8" />
+	<head>
+		<title> Register Scheduler Account </title>
+	</head>
+	<body>
+		<h1> Register for a Scheduler Account </h1>
+		<form action="" method="POST">
+			Please enter your email: <input type="text" name="email" id="email"> </input> <br />		
+			Please enter your password: <input type="password" name="password" id="password"> </input> <br />
+			<input type="submit" value="Register Account"> </input>
+		</form>
+		Criteria for Valid Password:
+		<ol>
+			<li> Longer than 6 characters </li>
+			<li> At least 1 capital and lowercase letter </li>
+			<li> At least 1 number <li>
+		</ol>
+		{% if 'email' in errors: %}
+			<b> User with specified email already exists. Please register using a differente email</b> <br />
+		{% endif %}
+
+		{% if 'password' in password: %}
+			<b> Specified password does not satisfy criteria. Please register using a valid password </b> <br />
+		{% endif %}
+	</body>
+</HTML>
