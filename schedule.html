@@ -4,7 +4,7 @@
 		<title> User Schedule </title>
 	</head>
 	<body>
-		<h1> {{user + '\'s'}} Schedule for Week of {{dates[0]}} </h1>
+		<h1> {{user.email}}'s Schedule for Week of {{dates[0]}} </h1>
 		<table border="1 solid">
 			<tr> 
 				<td> </td>
@@ -27,6 +27,6 @@
 		</form> <br />
 
 		<a href="addTask"><button> Add a Task to Schedule </button> </a>
-		<button href="removeTask"> Remove a Task From Schedule </button>
+		<a href="removeTask"><button> Remove a Task From Schedule </button> </a>
 	</body>
 </HTML>
