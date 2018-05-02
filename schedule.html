@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+	<meta charset = "UTF-8" />
+	<head>
+		<title> User Schedule </title>
+	</head>
+	<body>
+		<h1> {{user + '\'s'}} Schedule for Week of {{dates[0]}} </h1>
+		<table border="1 solid">
+			<tr> 
+				<td> </td>
+				{% for time in times: %}
+					<td> {{time}} </td>
+				{% endfor %}
+			</tr>
+			{% for date in dates: %}
+				<tr> <td> {{date}} </td>
+				{% for i in times: %}
+					<td> </td>
+				{% endfor %}
+				</tr>
+			{% endfor %}
+		</table>
+
+		<form action="" method="POST">
+			View Schedule for a Different Week: <input type="date" name="date" id="date"> </input> <br />
+			<input type="submit" value="View Schedule"> </input>
+		</form> <br />
+
+		<a href="addTask"><button> Add a Task to Schedule </button> </a>
+		<button href="removeTask"> Remove a Task From Schedule </button>
+	</body>
+</HTML>
