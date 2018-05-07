@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #EEEEEE;
+}
+
+header {
+    background-color: #22A7F0;
+    font-size: 2em;
+    color: white;
+    font-weight: 200;
+    text-align: center;
+    padding: 15px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 25px 40px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.08), 0 3px 6px rgba(0,0,0,.15);
+}
+
+h1 {
+    margin-top: 0;
+}
