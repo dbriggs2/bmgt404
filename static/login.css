@@ -1,0 +1,13 @@
+.login-form {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.login-form h1 {
+    margin-bottom: 20px;
+}
+
+.login-form-inner {
+    display: inline-block;
+    text-align: left;
+}
