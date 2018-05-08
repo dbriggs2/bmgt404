@@ -1,18 +1,14 @@
 import sqlite3
-import os.path
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-db_path = os.path.join(BASE_DIR, 'schedule.db')
 
 def db_account_exists(email):
-    conn = sqlite3.connect('db_path')
+    conn = sqlite3.connect('schedule.db')
     c = conn.cursor()
     c.execute('SELECT * FROM account WHERE email = ?', (email,))
     return c.fetchone()
 
 def db_account_Store(email, password):
     #file name of database needed to be changed 
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect('schedule.db')
     c = conn.cursor()
     c.execute('INSERT INTO account (email, password) VALUES (?,?)', (email, password))
     conn.commit()
@@ -44,7 +40,7 @@ def db_transaction_account(userEmail,userPassword):
 
 def db_task_Store(task):
     #file name of database needed to be changed 
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect('schedule.db')
     c = conn.cursor()
     c.execute(('INSERT INTO Account VALUES (?,?,?,?,?,?,?)', task))
     conn.commit()
@@ -63,7 +59,7 @@ def db_transaction_task(userID,account_id, task_Name, type, description, date):
 
 def db_Login(userEmail, userPassword):
     #file name of database needed to be changed 
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect('schedule.db')
     c = conn.cursor()
     # c.execute('Select email  From account Where email = %s'%userEmail)
     # email = c.fetchone()[0]
@@ -85,7 +81,7 @@ def db_Login(userEmail, userPassword):
 def extract_task(Id):
     
     #file name of database needed to be changed 
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect('schedule.db')
     c = conn.cursor()
     c.execute('Select *  From account Where id = %s'%Id)
     account_id = c.fetchone()[1]
