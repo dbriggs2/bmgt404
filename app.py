@@ -54,6 +54,8 @@ def register():
 
 @app.route('/viewSchedule', methods=['GET', 'POST'])
 def viewSchedule():
+	if 'user' not in session:
+		return redirect('/login')
 	if request.form == 'POST':
 		now = request.form['date']
 	else:
@@ -70,4 +72,10 @@ def addTask():
 
 @app.route('/removeTask', methods=['GET', 'POST'])
 def removeTask():
+	if 'user' not in session:
+		return redirect('/login')
 	return render_template('removeTask.html', user = session['user'], times=times)
+
+@app.route('/')
+def index():
+	return redirect('/login')
