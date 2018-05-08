@@ -40,7 +40,7 @@
 								<b> User with specified email already exists. Please register using a differente email</b> <br />
 							{% endif %}
 					
-							{% if 'password' in password: %}
+							{% if 'password' in errors: %}
 								<b> Specified password does not satisfy criteria. Please register using a valid password </b> <br />
 							{% endif %}
 						</div>
