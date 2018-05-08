@@ -9,11 +9,11 @@
 	</head>
 	<body>
 		<header>
-			Ahead Schedule Builder
+			<a href="/">Ahead Schedule Builder</a>
 		</header>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-1">
+				<div class="col-md-8 col-md-offset-2">
 					<div class="login-form card">
 						<h1> Create an account </h1>
 						<div class="login-form-inner">
@@ -40,7 +40,7 @@
 								<b> User with specified email already exists. Please register using a differente email</b> <br />
 							{% endif %}
 					
-							{% if 'password' in password: %}
+							{% if 'password' in errors: %}
 								<b> Specified password does not satisfy criteria. Please register using a valid password </b> <br />
 							{% endif %}
 						</div>
