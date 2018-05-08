@@ -70,9 +70,8 @@ def db_Login(userEmail, userPassword):
     # if password.strip() == "":
     #     return False 
     c.execute('SELECT password FROM account WHERE email = ?', (userEmail,))
-    pw = c.fetchone()[0]
-    print(pw, userPassword)
-    return pw is not None and pw == userPassword
+    pw = c.fetchone()
+    return pw is not None and pw[0] == userPassword
 
 
 # In[24]:
