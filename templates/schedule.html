@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+	<meta charset = "UTF-8" />
+	<head>
+		<title> User Schedule </title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="static/main.css" type="text/css">
+		<link rel="stylesheet" href="static/schedule.css" type="text/css">
+	</head>
+	<body>
+		<header>
+			<a href="/">Ahead Schedule Builder</a>
+		</header>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="schedule card">
+						<h1>Schedule for the week of {{dates[0]}}</h1>
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th></th>
+									{% for time in times %}
+										<th>{{time}}</th>
+									{% endfor %}
+								</tr>
+							</thead>
+							<tbody>
+								{% for date in dates %}
+									<tr>
+										<td>{{date}}</td>
+										{% for i in times %}
+										<td></td>
+										{% endfor %}
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+						<hr>
+						<form id="scheduleForm" action="" class="form" method="POST">
+							<div class="form-group">
+								<label for="date">View schedule for another week:</label>
+								<input type="date" name="date" id="date" class="form-control">
+							</div>
+							<div class="form-group">
+								<input type="submit" class="btn btn-primary" value="View">
+							</div>
+						</form>
+
+						<a href="addTask">Add a Task to Schedule</a>
+						<br/>
+						<a href="removeTask">Remove a Task From Schedule</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</HTML>

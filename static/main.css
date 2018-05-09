@@ -2,6 +2,7 @@ html, body {
     height: 100%;
     width: 100%;
     background-color: #EEEEEE;
+    padding-bottom: 50px;
 }
 
 header {
@@ -11,6 +12,12 @@ header {
     font-weight: 200;
     text-align: center;
     padding: 15px;
+    margin-bottom: 50px;
+}
+
+header a, header a:hover {
+    color: white;
+    text-decoration:none;
 }
 
 .card {
@@ -19,6 +26,7 @@ header {
     margin-bottom: 15px;
     border-radius: 3px;
     box-shadow: 0 3px 6px rgba(0,0,0,.08), 0 3px 6px rgba(0,0,0,.15);
+    margin-bottom: 150px;
 }
 
 h1 {
